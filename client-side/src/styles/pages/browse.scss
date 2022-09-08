@@ -1,0 +1,51 @@
+.ui--browse {
+  &-container {
+  }
+
+  &-title {
+    margin: 0 0 2rem;
+
+    .h1 {
+    }
+  }
+
+  &-group {
+    display: grid;
+    gap: 2rem;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  }
+
+  &-list {
+    overflow: hidden;
+    border-radius: var(--border-radius-small);
+
+    .poster {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3/4.2;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &-album {
+    video {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      aspect-ratio: 16/9;
+      border-radius: var(--border-radius-small);
+      user-select: unset;
+      pointer-events: unset;
+    }
+
+    &-episodes {
+      display: grid;
+      gap: 1rem;
+      grid-auto-flow: dense;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      margin: 2rem auto 0;
+    }
+  }
+}

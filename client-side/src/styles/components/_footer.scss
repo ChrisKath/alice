@@ -1,0 +1,15 @@
+.ui--footer {
+  position: relative;
+  background-color: rgba(white, 0.04);
+
+  &-container {
+    display: grid;
+    grid-auto-flow: column;
+    padding: 0 2rem;
+    height: 100%;
+
+    i {
+      align-self: center;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "name": "project_alice-webapp",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "start:dev": "next dev --port 8443",
+    "start": "next start",
+    "build": "next build",
+    "prebuild": "rimraf dist"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.3",
+    "axios": "^0.27.2",
+    "classnames": "^2.3.1",
+    "date-fns": "^2.28.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "js-cookie": "^3.0.1",
+    "lowdb": "^3.0.0",
+    "next": "^12.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2",
+    "react-transition-group": "^4.4.2",
+    "react-use": "^17.4.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/classnames": "^2.3.1",
+    "@types/fluent-ffmpeg": "^2.1.20",
+    "@types/js-cookie": "^3.0.2",
+    "@types/lowdb": "^1.0.11",
+    "@types/node": "^18.0.5",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-redux": "^7.1.24",
+    "@types/react-transition-group": "^4.4.5",
+    "@types/uuid": "^8.3.4",
+    "rimraf": "^3.0.2",
+    "sass": "^1.53.0",
+    "typescript": "^4.7.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
