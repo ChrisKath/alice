@@ -1,11 +1,11 @@
 import { NestFactory } from '@nestjs/core'
+import { NestExpressApplication } from '@nestjs/platform-express'
 import { AppModule } from '@/app'
 import { port } from '@/constants/configs'
-import morgan from 'morgan'
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule)
-  app.use(morgan('dev'))
+  const app = await NestFactory.create<NestExpressApplication>(AppModule)
+  app.setGlobalPrefix('services')
   app.enableCors({
     origin: '*',
     methods: ['GET', 'POST', 'PATCH', 'DELETE'],

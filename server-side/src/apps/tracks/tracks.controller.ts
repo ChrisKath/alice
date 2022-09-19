@@ -1,24 +1,28 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common'
+import { Controller, Get, HttpException, HttpStatus, Param } from '@nestjs/common'
+import { plainToClass } from 'class-transformer'
 import { TracksService } from './tracks.service'
-import { TrackDocument } from './tracks.entity'
-import { CreateTrackDto } from './dto/create-track.dto'
 
 @Controller('tracks')
 export class TracksController {
   constructor(private tracksService: TracksService) {}
 
   @Get()
-  async findAll(): Promise<TrackDocument[]> {
-    return await this.tracksService.findAll()
+  async findAll() {
+    try {
+      const tracks = await this.tracksService.findAll()
+      return tracks
+    } catch (error) {
+      throw new HttpException('Unknown `tracks.findAll`', HttpStatus.FORBIDDEN)
+    }
   }
 
   @Get(':id')
-  async findOne(@Param('id') id: string): Promise<TrackDocument> {
-    return await this.tracksService.findOne(id)
-  }
-
-  @Post()
-  async create(@Body() createTrackDto: CreateTrackDto) {
-    return await this.tracksService.create(createTrackDto)
+  async findOne(@Param('id') id: string) {
+    try {
+      const track = await this.tracksService.findOne(id)
+      return track
+    } catch (error) {
+      throw new HttpException('Unknown `tracks.findOne`', HttpStatus.FORBIDDEN)
+    }
   }
 }

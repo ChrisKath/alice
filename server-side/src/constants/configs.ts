@@ -14,10 +14,9 @@ export const tokenExpires = process.env.APP_JWT_TTL || '1d'
 export const timeZonw = process.env.TZ || 'Asia/Bangkok'
 
 export const database = {
-  type: process.env.DB_TYPE || 'postgres',
   host: process.env.DB_HOST || 'localhost',
   port: parseInt(process.env.DB_PORT, 10) || 5432,
+  name: process.env.DB_NAME,
   username: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
-  name: process.env.DB_NAME
+  password: process.env.DB_PASSWORD
 }

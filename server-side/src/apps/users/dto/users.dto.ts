@@ -11,9 +11,13 @@ export class UserDto extends BaseDto {
 
   @Expose()
   @IsNumber()
-  id!: number
+  id: number
 
   @Expose()
   @IsString()
-  displayName!: string
+  displayName: string
+
+  @Expose()
+  @IsNumber()
+  level?: number = 1
 }

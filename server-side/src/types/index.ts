@@ -1,3 +1,5 @@
+export type { Skip } from './track'
+
 export interface ConfigVariables {
   isProduction: boolean
   isDevelop: boolean
@@ -12,7 +14,6 @@ export interface ConfigVariables {
 }
 
 export interface DatabaseConfig {
-  type: string
   host: string
   port: number
   username: string

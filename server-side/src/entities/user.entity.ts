@@ -2,12 +2,10 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
 import { BaseEntity } from '@/helpers/base.entity'
 
 @Entity({ name: 'users' })
-export class User extends BaseEntity {
+export class UserEntity extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number
 
-  @Column({ type: 'varchar', length: 255, nullable: true, default: '' })
+  @Column({ type: 'varchar', length: 128, default: 'Display Name' })
   displayName: string
 }
-
-export type UserDocument = User & BaseEntity

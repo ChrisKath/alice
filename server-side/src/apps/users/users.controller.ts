@@ -1,7 +1,6 @@
 import { Controller, Get, HttpException, HttpStatus, Param } from '@nestjs/common'
 import { plainToClass } from 'class-transformer'
 import { UsersService } from './users.service'
-import { UserDocument } from './users.entity'
 import { UserDto } from './dto/users.dto'
 
 @Controller('users')
@@ -12,9 +11,9 @@ export class UsersController {
   async findAll(): Promise<UserDto[]> {
     try {
       const users = await this.usersService.findAll()
-      return users
+      return users.map((user) => plainToClass(UserDto, user))
     } catch (error) {
-      throw new HttpException('Unknown', HttpStatus.FORBIDDEN)
+      throw new HttpException('Unknown `users.findAll`', HttpStatus.FORBIDDEN)
     }
   }
 
@@ -22,9 +21,9 @@ export class UsersController {
   async findOne(@Param('id') id: number): Promise<UserDto> {
     try {
       const user = await this.usersService.findOne(id)
-      return user
+      return plainToClass(UserDto, user)
     } catch (error) {
-      throw new HttpException('Unknown', HttpStatus.FORBIDDEN)
+      throw new HttpException('Unknown `users.findOne`', HttpStatus.FORBIDDEN)
     }
   }
 }
