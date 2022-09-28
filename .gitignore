@@ -4,10 +4,8 @@
 /node_modules
 
 # production
-.next
-dist
-docs/refs/*
-docs/s3/*
+/.next
+/dist
 
 # misc
 .DS_Store
@@ -16,8 +14,18 @@ docs/s3/*
 .idea
 .firebase
 *.pem
+package.txt
 
 # local env files
 .env
 .env.local
 .env.*.local
+
+# Log files
+yarn.lock
+yarn-error.log
+yarn-debug.log
+npm-debug.log
+pnpm-debug.log
+package-lock.json
+firebase-debug.log
